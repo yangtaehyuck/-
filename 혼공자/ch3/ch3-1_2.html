@@ -1,0 +1,63 @@
+<!-- <script>
+  if (273 < 100) {  // 273은 100보다 크기때문에 위의 조건식은 건너뛰게 되고 아래의 종료로 넘어간다
+    alert('273 < 100 => true')
+  }
+
+  alert('종료')
+</script> -->
+
+<!-- <script>
+  const date = new Date()
+  const hours = date.getHours()
+
+  if (hours < 12) {
+    // 불 표현식이 true일 때 실행하는 문장
+    alert(`현재 시간은 ${hours}시로 오전입니다.`)
+  } else {
+    // 불 표현식이 false일 때 실행하는 문장
+    alert(`현재 시간은 ${hours}시로 오후입니다.`)
+  }
+</script> -->
+
+<!-- <script>
+  const hours = (new Date()).getHours()
+
+  if (hours < 10) {
+    alert('아침밥 먹을 시간입니다.')
+  } else if (hours < 16) {
+    alert('점심밥 먹을 시간입니다.')
+  } else {
+    alert('저녁밥 먹을 시간입니다.')
+  }
+</script> -->
+
+<!-- <script>
+  const a = Number(prompt('첫 번째 숫자', ''))
+  const b = Number(prompt('두 번째 숫자', ''))
+
+  if (a > b) {
+    alert('첫 번째로 입력한 숫자가 더 큽니다.')
+  } else if (a === b) {
+    alert('두 숫자가 같습니다.')
+  } else {
+    alert('두 번째로 입력한 숫자가 더 큽니다.')
+  }
+</script> -->
+
+<script>
+  const month = (new Date()).getMonth() + 1 // 위의 month에 0~11로 들어가기 때문에 전체 값에 +1을 해줌으로 1~12가 된다
+  
+  if (3 <= month && month <= 5) {
+    alert('봄입니다.')
+  } 
+  if (6 <= month && month <= 8) {
+    alert('여름입니다.')
+  } 
+  if (9 <= month && month <= 11) {
+    alert('가을입니다.')
+  } 
+  if ((1 <= month && month <= 2) || (month === 12)) {
+    alert('겨울입니다.')
+  }
+
+</script>

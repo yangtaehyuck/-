@@ -1,0 +1,105 @@
+<!-- <script>
+  const x = Number(prompt('숫자를 입력해주세요', ''));
+  switch (x) {
+    case 1: // x가 1일때
+      alert('입력한 값이 1입니다');
+      break;
+    case 2: // x가 2일때
+      alert('입력한 값이 2입니다');
+      break;
+    case 3: // x가 3일때
+      alert('입력한 값이 3입니다');
+      break;
+    default: // 생략가능
+      alert('입력한 값이 1 ~ 3이 아닙니다.')  
+  }
+</script> -->
+
+<!-- <script>
+  // 삼항 연산자, 조건부 연산자
+  // (불_표현식) ? (참일_때의_결과) : (거짓일_때의_결과) 
+  const x = Number(prompt('숫자를 입력해주세요', ''))
+  alert((x >= 0) ? '0 이상의 숫자입니다' : '0보다 작은 숫자입니다')
+  // x → 10일때 참이므로 참일_일때_결과를 출력
+</script> -->
+
+<!-- <script>
+  // 짝수 홀수 판별
+  const input = prompt('정수를 입력해주세요.', '')
+  const 끝자리 = Number(input[input.length - 1])
+  // input = '1234' → input[3]이 끝자리 '4' → input.length는 4에서 -1을 하면 3 따라서 input.length - 1 → 끝자리를 구할 수 있음
+
+  // if (끝자리 === 1 || 3 || 5 || 7 || 9) ← 이렇게 쓰면 안됨
+  if (끝자리 === 1 ||
+      끝자리 === 3 ||
+      끝자리 === 5 ||
+      끝자리 === 7 ||
+      끝자리 === 9) {
+    alert('입력한 숫자는 홀수입니다.')
+  } else {
+    alert('입력한 숫자는 짝수입니다.')
+  }
+  
+  // 위 코드를 아래와 같이 바꿀 수 있다.
+  const input = Number(prompt('정수를 입력해주세요.', ''))
+  if (input % 2 === 1) {
+    alert('입력한 숫자는 홀수입니다.')
+  } else {
+    alert('입력한 숫자는 짝수입니다.')
+  }
+</script> -->
+
+<!-- <script>
+  const input = Number(prompt('태어난 해를 입력해주세요.', '')) % 12
+
+  // if (input === 0)       { alert('원숭이 띠입니다.') }  
+  // else if (input === 1)  { alert('닭 띠입니다.') }
+  // else if (input === 2)  { alert('개 띠입니다.') }
+  // else if (input === 3)  { alert('돼지 띠입니다.') }
+  // else if (input === 4)  { alert('쥐 띠입니다.') }
+  // else if (input === 5)  { alert('소 띠입니다.') }
+  // else if (input === 6)  { alert('호랑이 띠입니다.') }
+  // else if (input === 7)  { alert('토끼 띠입니다.') }
+  // else if (input === 8)  { alert('용 띠입니다.') }
+  // else if (input === 9)  { alert('뱀 띠입니다.') }
+  // else if (input === 10)  { alert('말 띠입니다.') }
+  // else if (input === 11)  { alert('양 띠입니다.') }
+
+  // 위코드를 아래와 같이 작성 할 수 있다.
+  const tti = '원숭이 닭 개 돼지 쥐 소 호랑이 토끼 용 뱀 말 양'.split(' ')
+  alert(`${tti[input]} 띠입니다.`) // 만약 input이 1이면 tti[1]이 되고 tti의 1번째는 닭 띠입니다.
+</script> -->
+
+<script>
+  const year = Number(prompt('태어난 해를 입력해주세요.', ''))
+
+  let result1
+  const e1 = year % 12
+  if      (e1 === 0)   { result1 = '신' }  
+  else if (e1 === 1)   { result1 = '유' }
+  else if (e1 === 2)   { result1 = '술' }
+  else if (e1 === 3)   { result1 = '해' }
+  else if (e1 === 4)   { result1 = '자' }
+  else if (e1 === 5)   { result1 = '축' }
+  else if (e1 === 6)   { result1 = '인' }
+  else if (e1 === 7)   { result1 = '묘' }
+  else if (e1 === 8)   { result1 = '진' }
+  else if (e1 === 9)   { result1 = '사' }
+  else if (e1 === 10)  { result1 = '오' }
+  else if (e1 === 11)  { result1 = '미' }
+
+  let result2
+  const e2 = year % 10
+  if      (e2 === 0)   { result2 = '경' }  
+  else if (e2 === 1)   { result2 = '신' }
+  else if (e2 === 2)   { result2 = '임' }
+  else if (e2 === 3)   { result2 = '계' }
+  else if (e2 === 4)   { result2 = '갑' }
+  else if (e2 === 5)   { result2 = '을' }
+  else if (e2 === 6)   { result2 = '병' }
+  else if (e2 === 7)   { result2 = '정' }
+  else if (e2 === 8)   { result2 = '무' }
+  else if (e2 === 9)   { result2 = '기' }
+
+  alert(`${year}년은 ${result2}${result1}년입니다.`)
+</script>

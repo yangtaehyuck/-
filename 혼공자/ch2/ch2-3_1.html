@@ -1,0 +1,66 @@
+// 문자열 입력: prompt()
+prompt("메시지", "디폴트 값") → 숫자를 넣으면 무조건 문자열로 리턴함
+→ 디폴트 값에 값을 입력하면 디폴트 값에 입력한 값이 들어감
+→ 123을 넣으면 "123"인 문자열로 반환
+→ true를 넣으면 "true"로 반환
+
+const a = prompt('첫 번째 숫자를 입력해주세요.') → 123
+const b = prompt('두 번째 숫자를 입력해주세요.') → 456
+alert(`${a} + ${b} = ${a + b}`) → "123456"
+"123"+"456" = "123456"이 됨 // 문자열의 덧셈이 된다
+그래서 숫자로 바꿔줘야함
+Number() 다른 것(문자열이나 불 등) → 숫자로 바꿔줌
+String() 다른 것(숫자나 불 등) → 문자열로 바꿔줌
+Boolean() 다른 것(숫자나 문자열 등) → 불로 바꿔줌
+
+
+# 문자열 → 숫자
+Number("123") → 123
+const a = Number("안녕하세요")를 숫자로 바꾸면 → NaN
+a → NaN
+Not a Number → NaN // 숫자가 아닌데 숫자임
+→ typeof(NaN) → "number" 숫자이긴함
+
+a * 100 → NaN
+a + 100 → NaN
+a - 100 → NaN 처럼 무조건 NaN이 나옴
+
+# 숫자 → 문자열
+123 → "123"
+
+# 불 → 문자열
+String(true) → "true"
+String(false) → "false"
+
+# 불 → 숫자
+Number(true) → 1 → 켜져있다, 존재한다
+Number(false) → 0 → 꺼져있다, 존재하지않다
+
+# 다른 자료형 → 불
+5가지 경우는 false로 반환된다
+0, NaN, "", null, undefined
+
+이 외의 경우 → true
+
+
+let a = prompt('첫 번째 숫자를 입력해주세요.') → 123
+a = Number(a) 이렇게 하면 오류가 발생한다 왜냐하면 const라는 상수에 재할당을 하게되서이다 할거면 let으로 바꿔줘야함
+let b = prompt('두 번째 숫자를 입력해주세요.') → 456
+b = Number(b)
+alert(`${a} + ${b} = ${a + b}`) → 579
+
+
+위의 코드를 const로 하려면 아래와 같이 작성 할 수 있음.
+const a = Number(prompt('첫 번째 숫자를 입력해주세요.'))
+const b = Number(prompt('두 번째 숫자를 입력해주세요.'))
+alert(`${a} + ${b} = ${a + b}`)
+
+
+const a = prompt("아무 것이나 입력해주세요.", "")
+뒤에 디폴트 값인 ""에 "안녕하세요"를 입력하게 되면
+a → "안녕하세요"가 할당된다
+
+// 불 입력: confirm()
+confirm("메시지")를 웹 console에서 실행하게 되면 확인 버튼과 취소 버튼이 생긴다
+확인 → true
+취소 → false를 반환한다
