@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {   
+      const header1 = document.querySelector('#textContent')
+      const header2 = document.querySelector('#innerHTML')
+      // 조작하는 법
+      // 값을 추출한다
+      console.log(header1.textContent)
+      console.log(header2.innerHTML)
+      // 값을 넣는다
+      header1.textContent = '원하는 문자열'
+      header2.innerHTML = '원하는 문자열'
+    })
+  </script>
+</head>
+<body>
+  <h1 id="textContent">textContent 속성 기존 문자열</h1>
+  <h1 id="innerHTML">innerHTML 속성 기존 문자열</h1>
+</body>
+</html>
