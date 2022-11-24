@@ -9,12 +9,17 @@
       const img = document.querySelector('img')
       // 값을 넣는 행위
       img.setAttribute('src', 'https://img.gqkorea.co.kr/gq/2022/09/style_632ac6869b755.jpg')
+      // 다른방법
+      img.src = 'https://img.gqkorea.co.kr/gq/2022/09/style_632ac6869b755.jpg'
+
       // 값을 추출하는 행위
-      img.getAttribute()
+      console.log(img.getAttribute('src')) //getAttribute는 이렇게 사용하면 console창에 url주소가 출력됨
+      // 위의 다른방법으로한 값 추출
+      console.log(img.src)
     })
   </script>
 </head>
 <body>
   <img src="" alt="">
 </body>
-</html>
+</html> 

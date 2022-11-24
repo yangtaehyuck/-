@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const divs = document.querySelectorAll('div') // querySelectorAll을 사용하여 아래 body태그의 모든 div를 가져옴
+      divs.forEach((div, key) => { // key는 0~9까지 1씩 늘어나는 인덱스이다 아래의 div의 0번째부터 9번째까지 도는거
+        div.style.backgroundColor = 'rgb(0, 0, 0)'// div.style['background-color']로도 사용가능
+      // div.style.backgroundColor = 'rgb(${key * 25.5}, ${key * 25.5}, ${key * 25.5})' 처럼 key를 사용하여 그라데이션을 넣을 수 있음
+        div.style.height = '10px'
+      })
+    })
+    
+    // 글자 조작
+    // textContent, innerHTML
+
+    // 속성 조작
+    // setAttribute('이름', '값')
+    // getAttribute('이름')
+    // 표준에 있는 속성이라면 => 그냥 입력
+
+    // 스타일 조작
+    // style.backgroundColor
+    // style.height
+  </script>
+</head>
+<body> 
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  
+</body>
+</html>
