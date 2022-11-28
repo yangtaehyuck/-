@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('keydown', (event) => { // 이벤트가 발생했을 때 event라는 매개변수로 전달된다
+        document.body.innerHTML = `<h1>keydown ${event.code}</h1>`
+      })
+      document.addEventListener('keyup', () => {
+        document.body.innerHTML = '<h1>keyup</h1>'
+      })
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

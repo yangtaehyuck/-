@@ -5,8 +5,17 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const header = document.createElement('h1')
-      header.textContent = 'createElement로 만든 태그'
+      const header = document.createElement('h1') // 요소를 만든다
+      header.textContent = 'createElement로 만든 태그' // 위에 만든 요소에 text를 추가
+      header.style.color = 'red'    // 위에 만든 요소에 색을 추가
+
+      const body = document.querySelector('body')
+      body.appendChild(header) // 위의 header가 아래의 body태그에 붙게된다 => 생성
+      body.removeChild(header) // body태그에 붙인것을 제거 => 삭제
+      setTimeout(() => {
+        body.removeChild(header) // 이 코드보단 아래의 코드를 더 선호함
+        header.parentNode.removeChild(header) // header.parentNode 와 body는 같다 header의 부모가 body이기 때문에
+      }, 2000)
     })
   </script>
 </head>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const header = document.createElement('h2') // 문서 객체를 만들때 createElement
+    header.textContent = '안녕하세요'
+
+    const first = document.querySelector('.first')  // body 태그안의 first class를 가져옴
+    const second = document.querySelector('.second')// body 태그안의 second class를 가져옴
+    first.appendChild(header)  // 문서 객체를 붙이거나 이동을 할때는 appendChild를 이용한다 document.body.appendChild()
+    setTimeout(() => {
+      second.appendChild(header)    // 이동할때도 appendChild를 활용하여 이동
+    }, 2000)                        // 처음에 '안녕하세요'가 first class에 있다가 2초뒤에 second class로 이동한다
+    })
+
+    // 1초마다 '안녕하세요'태그가 움직임
+    // const toFirst = () => {     
+    //   first.appendChild(header) // 먼저 first로 이동후 header인 '안녕하세요'를 출력
+    //   setTimeout(toSecond, 1000)// 1초뒤 toSecond함수로 이동
+    // }
+    // const toSecond = () => {
+    //   second.appendChild(header)// second class로 이동후 header인 '안녕하세요'를 출력
+    //   setTimeout(toFirst, 1000) // 1초뒤 다시 toFirst함수로 이동
+    // }
+    // toFirst() // 함수를 호출하면
+
+    // 1초마다 '안녕하세요'태그 움직이기 2
+    // const array = [
+    //   document.querySelector('.first'),
+    //   document.querySelector('.second'),
+    // ]
+    // let count = 0
+    // const fun = () => {
+    //   array[count % 2].appendChild(header)
+    //   count++
+    // }
+    // setInterval(fun, 1000)
+    // fun()
+  </script>
+</head>
+<body>
+  <div class="first">
+    <h1>첫 번째 div 태그 내부</h1>
+  </div>
+  <hr>
+  <div class="second">
+    <h1>두 번째 div 태그 내부</h1>
+  </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const h1 = document.querySelector('h1')
+      const textarea = document.querySelector('textarea')
+      textarea.addEventListener('keyup', () => {
+        h1.textContent = `글자 수: ${textarea.value.length}`
+      })
+    })
+  </script>
+</head>
+<body>
+  <h1>글자 수: 0</h1>
+  <textarea></textarea>
+</body>
+</html>

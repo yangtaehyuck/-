@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.createElement('h1')
+      document.body.appendChild(header)
+
+      let count = 0
+      header.style.userSelect = 'none' // 클릭할때 선택되지 않도록 함
+      header.textContent = `클릭 횟수: ${count}`
+      header.addEventListener('click', () => { // click이라는 이벤트를 만들어서 클릭횟수를 클릭할때마다 count가 올라가게끔
+        count++                              
+        header.textContent = `클릭 횟수: ${count}`
+      })
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
