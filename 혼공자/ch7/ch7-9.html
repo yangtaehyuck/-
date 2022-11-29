@@ -10,6 +10,13 @@
       textarea.addEventListener('keyup', () => {
         h1.textContent = `글자 수: ${textarea.value.length}`
       })
+      // 아래 두 코드 모두 위 코드와 같은코드임
+      textarea.addEventListener('keyup', () => {
+        h1.textContent = `글자 수: ${event.currentTarget.value.length}`
+      })
+      textarea.addEventListener('keyup', function () {
+        h1.textContent = `글자 수: ${this.value.length}`
+      })
     })
   </script>
 </head>

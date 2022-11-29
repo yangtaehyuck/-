@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.querySelector('input')
+      const select = document.querySelector('select')
+      const span = document.querySelector('span')
+      const 함수 = () => {
+        const 현재값 = Number(input.value)
+        const 선택된단위 = select.options[select.options.selectedIndex]
+        span.textContent = 현재값 * Number(선택된단위.value)
+      }
+      input.addEventListener('keyup', 함수)
+      select.addEventListener('change', 함수)
+
+      // 위와 아래는 같은 코드인데 뒷 부분을 함수로 만들어서 더 보기 편하게 만듦
+
+      // input.addEventListener('keyup', () => {
+      //   const 현재값 = Number(input.value)
+      //   const 선택된단위 = select.options[select.options.selectedIndex]
+      //   span.textContent = 현재값 * Number(선택된단위.value)
+      // })
+      // select.addEventListener('change', () => {
+      //   const 현재값 = Number(input.value)
+      //   const 선택된단위 = select.options[select.options.selectedIndex]
+      //   span.textContent = 현재값 * Number(선택된단위.value)
+      // })
+    })
+  </script>
+</head>
+<body>
+  <input type="text" name="" id="" value="0"> cm =
+  <span>0</span>
+  <select name="" id="">
+    <option value="10">mm</option>
+    <option value="0.01">m</option>
+    <option value="0.393701">inch</option>
+  </select>
+</body>
+</html>

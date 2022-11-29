@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const a = document.querySelector('a')
+      a.addEventListener('click', (event) => {
+        event.preventDefault() // 아래의 링크를 눌러도 주소창으로 이동되지 않게 막아주는 역할
+      })
+      a.addEventListener('contextmenu', (event) => {
+        event.preventDefault()
+      })
+    })
+  </script>
+</head>
+<body>
+  <a href="http://hanbit.co.kr">링크</a>
+</body>
+</html>

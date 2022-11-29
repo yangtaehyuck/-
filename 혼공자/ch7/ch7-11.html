@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttonA = document.querySelector('button')
+      const buttonB = document.querySelector('input[type=button]') // input태그의 type이 button인 것을 가져옴
+      buttonA.addEventListener('click', (event) => { // buttonA에 클릭 이벤트를 넣음 => 사용자가 버튼을 눌렀을 때 사용됨
+        event.currentTarget.textContent += '글자' // button 태그의 textContent의 '글자'를 바꿈
+      })
+      buttonB.addEventListener('click', (event) => { // buttonA에 클릭 이벤트를 넣음
+        event.currentTarget.value += '글자'       // input 태그의 value의 '글자'를 바꿈
+      })
+      const form = document.querySelector('form') // submit을 잡으려면 form태그로 잡아야함
+      form.addEventListener('submit', (event) => {
+        const text = document.querySelector('input[type=text]')
+        if (text.value.indexOf('@') >= 0) {
+          alert('정상적으로 제출합니다')  // 정상적으로 제출이 되면 다른 주소창으로 넘어가짐
+        } else {
+          alert('이메일 형식을 입력해주세요')
+          event.preventDefault() // 이메일 형식이 아닐때 다른 주소창으로 넘어가는 것을 막아줌 => 서버의 부담 덜어줌
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <!-- 아래 3개 모두 버튼을 만들때 사용 -->
+
+  <!-- click 이벤트때 사용 -->
+  <button>글자</button>
+  <input type="button" value="글자">
+
+  <!-- submit 이벤트(click 이벤트도 가능하긴하다) -->
+  <form action="">
+    이메일 형식을 입력해주세요<br>
+    <input type="text" name="test" id="">
+    <input type="submit" value="글자">
+    <!-- form태그안에 button태그를 만들고싶으면 아래와 같이 input태그로 만든다 -->
+    <input type="button" value="글자">
+  </form>
+</body>
+</html>
