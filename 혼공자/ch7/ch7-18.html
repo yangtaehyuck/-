@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    const load = () => {
+      const data = localStorage.getItem('애플리케이션')
+      if (data !== null) {
+        // const [color, message] = data.split(',')
+        // return {
+        //   color: color,
+        //   message: message
+        // }
+        return JSON.parse(data)
+      } else {
+        return {
+          color: 'red',
+          message: ''
+        }
+      }
+    }
+    const save = (data) => {
+      // localStorage.setItem('애플리케이션', `${data.color},${data.message}`)
+      localStorage.setItem('애플리케이션', JSON.stringify(data))
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // 요소 가져오기
+      // localStorage.getItem('키') // 특정 키로 어떤 아이템을 꺼낼 때
+      // localStorage.setItem('키', '값') // 특정 키로 특정한 값을 저장 할 때
+      // localStorage.removeItem('키') // 특정 키로 어떤 아이템을 제거 할 때
+      // localStorage.clear() // 전체 제거
+      const p = document.querySelector('p')
+      const button = document.querySelector('button')
+      const input = document.querySelector('input')
+      const select = document.querySelector('select')
+
+      // 초기 실행 아래와 같은코드임
+      // const key = localStorage.getItem('키')
+      // const color = localStorage.getItem('color')
+      // if (key !== null) {
+      //   p.textContent = `이전 실행 때의 마지막 값: ${key}`
+      //   input.value = key
+      // }
+      // if (color !== null) {
+      //   document.body.style.backgroundColor = color
+      //   select.value = color
+      // } else {
+      //   document.body.style.backgroundColor = 'red'
+      // }
+      // 초기 실행
+      const data = load()
+        p.textContent = `이전 실행 때의 마지막 값: ${data.message}`
+        input.value = data.message
+        document.body.style.backgroundColor = data.color
+        select.value = data.color
+
+      // 이벤트 연결
+      button.addEventListener('click', () => {
+        // 저장된 값을 모두 제거
+        // localStorage.clear()
+
+        // 데이터를 모두 지우고
+        data.color = 'red'
+        data.message = ''
+        save(data)
+        // 입력양식 초기화
+        select.value = 'red'
+        input.value = ''
+      })
+      input.addEventListener('keyup', () => {
+        // 입력 양식 내부의 값을 저장
+        // localStorage.setItem('키', input.value)
+
+        data.message = input.value
+        save(data)
+      })
+      select.addEventListener('change', () => {
+        const color = select.options[select.selectedIndex].value
+        // 입력양식 반영
+        document.body.style.backgroundColor = color
+        // 데이터를 저장
+        // localStorage.setItem('color', color)
+        data.color = color
+        save(data)
+      })
+    })
+    
+    // JSON => JavaScript Object Notation
+
+    // {
+    //   "color": "red",
+    //   "message": "안녕하세요"
+    // }
+
+    // 규정
+    // 1. 키는 문자열만
+    // 2. 문자열은 반드시 큰따옴표
+
+    // JSON 객체
+    // JSON.stringify(): 자바스크립트 객체 → JSON 문자열
+    // JSON.parse(): JSON 문자열 → 자바스크립트 객체
+
+    // const Object = {
+    //   color: "red",
+    //   message: "안녕하세요"
+    // }
+    // console.log(JSON.stringify(object)) 
+    // // => {"color":"red", "message":"안녕하세요"}로 변경되서 출력됨
+
+    // const string = JSON.stringify(object)
+    // const other = JSON.parse(string)
+    // console.log(other.color)
+    // console.log(other.message)
+    // => red 안녕하세요  로 출력됨
+  </script>
+</head>
+<body>
+  <p></p>
+  <button>지우기</button>
+  <input type="text" name="" id="">
+  <select>
+    <option value="red">빨간색</option>
+    <option value="blue">파란색</option>
+    <option value="green">초록색</option>
+  </select>
+</body>
+</html>

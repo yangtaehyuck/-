@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkbox = document.querySelector('input[type=checkbox]')
+      const checkboxResult = document.querySelector('h1#checkbox')
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          checkboxResult.textContent = '체크'
+        } else {
+          checkboxResult.textContent = '해제'
+        }
+      })
+      const radios = document.querySelectorAll('input[type=radio][name=gender]') // gender가 여러개라서 querySelectorAll을 사용
+      const radioResult = document.querySelector('h1#radiobutton')
+      radios.forEach((radio) => {
+        radio.addEventListener('change', (event) => {
+          radioResult.textContent = event.currentTarget.value
+        })
+      })
+    })
+  </script>
+</head>
+<body>
+  <!-- 어떤 대상의 true 또는 false -->
+  <input type="checkbox" name="" id=""><br>
+  <h1 id="checkbox"></h1>
+  <!-- 여러 대상 중에서 하나를 선택 -->
+  <input type="radio" name="gender" id="" value="여성">여성<br>
+  <input type="radio" name="gender" id="" value="남성">남성<br>
+  <input type="radio" name="gender" id="" value="직접 지정">직접 지정<br>
+  <h1 id="radiobutton"></h1>
+</body>
+</html>

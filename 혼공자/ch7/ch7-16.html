@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let seconds = 0
+      let timerId = 0
+      // let [seconds, timerId] = [0, 0]으로 사용할 수도있다
+      const checkbox = document.querySelector('input[type=checkbox]')
+      const checkboxResult = document.querySelector('h1#checkbox')
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          document.body.style.backgroundColor = 'red'
+          timerId = setInterval(() => {
+            seconds += 1
+            checkboxResult.textContent = `${seconds}초`
+          }, 1000)
+        } else {
+          document.body.style.backgroundColor = 'white'
+          clearInterval(timerId)
+        }
+      })
+    })  
+  </script>
+</head>
+<body>
+  <input type="checkbox" name="" id="">타이머 활성화
+  <h1 id="checkbox">0초</h1>
+</body>
+</html>
