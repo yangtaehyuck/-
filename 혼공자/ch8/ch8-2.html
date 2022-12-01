@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    const 예 = () => {
+      try {
+        console.log('예외가 발생할 가능성이 있는 코드')
+      } catch (e) {
+        console.log('예외가 발생할 때 실행할 코드')
+      } finally {
+        console.log('무조건적으로 실행할 코드')
+      }
+    }
+    예()
+
+    // const 예 = () => {
+    //   try {
+    //     console.log('예외가 발생할 가능성이 있는 코드')
+    //   } catch (e) {
+    //     console.log('예외가 발생할 때 실행할 코드')
+    //   }
+    //     console.log('무조건적으로 실행할 코드')
+    // }
+    // 예()
+
+    // 아래코드와 위코드의 실행결과는 다르다
+    // 위 코드 
+    // => 예외가 발생할 가능성이 있는 코드 
+    // 무조건적으로 실행할 코드 
+    // 이렇게 실행됨
+
+    // 아래 코드
+    // => 예외가 발생할 가능성이 있는 코드
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

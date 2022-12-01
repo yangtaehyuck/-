@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    const getPerimeter = (r) => {
+      if (r < 0) {
+        throw '길이는 음수가 될 수 없습니다.'
+      }
+      const pi = 3.14
+      return 2 * pi * r
+    }
+
+    try {
+      console.log(getPerimeter(-10))
+    } catch (e) {
+      console.log('어떤 문제가 발생했습니다.')
+    }
+    console.log('프로그램이 정상적으로 종료되었습니다.')
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
