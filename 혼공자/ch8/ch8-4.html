@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    // function 메일보내기 (발신인, 수신인, 내용) {
+    //   console.log(`발신인: ${발신인}`)
+    //   console.log(`발신인: ${수신인}`)
+    //   console.log(내용)
+    // }
+
+    // 아래와 같이 쓸 수도있음
+    function 메일보내기 (객체) {
+      console.log(`발신인: ${객체.발신인}`)
+      console.log(`발신인: ${객체.수신인}`)
+      console.log(객체.내용)
+    }
+
+    // 메일보내기('구름', '별', '간식줘') // 이렇게 입력하면 누가 누구에게 보내는 것인지 모름
+    메일보내기({
+      발신인: '구름',
+      수신인: '별',
+      내용: '간식줘'
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

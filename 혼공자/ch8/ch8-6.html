@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    function isRequired (이름) { throw `${이름} 매개변수에 문제가 있습니다.`}
+
+    function 메일보내기 ({ 
+      발신인 = isRequired('발신인'),  // 기본값을 넣어줌 => 아무것도 입력하지 않았을 때 들어가는 값, 잘못입력한 값
+      수신인 = isRequired('수신인'), 
+      내용 = isRequired('내용')
+    }) {
+      console.log(`발신인: ${발신인}`)
+      console.log(`수신인: ${수신인}`)
+      console.log(내용)
+    }
+
+    메일보내기({
+      발신인: '구름',
+      수신인: '별',
+      내욤: '간식줘'
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
