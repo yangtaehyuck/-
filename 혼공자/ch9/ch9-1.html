@@ -1,0 +1,30 @@
+<script>
+  function createStudent(이름, 국어, 영어, 수학, 과학) {
+    return {
+      이름: 이름,
+      국어: 국어,
+      영어: 영어,
+      수학: 수학,
+      과학: 과학,
+      getSum () {
+        return this.국어 + this.영어 + this.수학 + this.과학 // this를 사용하려면 화살표 함수를 사용하면 안됨
+      },
+      getAverage () {
+        return this.getSum() / 4
+      }
+    }
+  }
+
+  const students = [
+    createStudent('구름', 87, 98, 88, 90),
+    createStudent('별이', 92, 98, 96, 88),
+    createStudent('겨울', 76, 96, 94, 86),
+    createStudent('바다', 98, 52, 98, 92)
+  ]
+
+  let output = '이름\t총점\t평균\n'
+  for (const student of students) {
+    output += `${student.이름}\t${student.getSum()}점\t${student.getAverage()}점\n`
+  }
+  console.log(output)
+</script>

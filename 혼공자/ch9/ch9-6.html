@@ -1,0 +1,44 @@
+<script>
+  // 부모 클래스 or 슈퍼 클래스
+  class Rectangle {
+    constructor (width, height) {
+      this.width = width
+      this.height = height
+    }
+
+    getArea () { return this.width * this.height }
+    getPerimeter () { return 2 * (this.width + this.height) }
+  }
+
+  // class Square {
+  //   constructor (width) {
+  //     this.width = width
+  //   }
+
+  //   getArea () { return this.width * this.width }
+  //   getPerimeter () { return 4 * this.width }
+  // }
+
+  // 자식 클래스 + 서브 클래스
+  class Square extends Rectangle { // => Rectangle 클래스로부터 상속받음
+    constructor (width) { // 위의 부모 클래스의 코드를 덮어쓴다는 생각으로 이렇게 만들면 부모 클래스의 getArea() getPerimeter()를 사용할수있음
+      super() // 생성자에서만 호출 => 부모 클래스의 생성자를 의미한다 Rectangle클래스의 constructor를 가르킴
+      this.width = width
+      this.height = width
+    }
+    // 위의 작업이 귀찮다면 아래와 같이 쓸수도있다
+    // constructor (width) {
+    //   super(width, width)
+    // }
+  }
+
+  const rect = new Rectangle(20, 10)
+  console.log(`넓이: ${rect.getArea()}`)
+  console.log(`둘레: ${rect.getPerimeter()}`)
+
+  const square = new Square(10)
+  console.log(`넓이: ${square.getArea()}`)
+  console.log(`둘레: ${square.getPerimeter()}`)
+
+
+</script>

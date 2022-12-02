@@ -1,0 +1,83 @@
+<script>
+  // 클래스를 생성할 때
+  class 클래스이름 {
+
+  }
+  // 객체 생성할때는 new를 붙이고 위의 클래스이름을 쓰면됨
+  new 클래스이름()
+  const 인스턴스 = new 클래스이름() // 이렇게도 쓰임
+
+  class StudentList {
+    constructor () {
+      this.list = []
+    }
+
+    add (student) {
+      this.list.push(student)
+    }
+
+    printTable () {
+      let output = '이름\t총점\t평균\n'
+      for (const student of this.list) {
+        output += `${student.이름}\t${student.getSum()}점\t${student.getAverage()}점\n`
+      }
+      console.log(output)
+    }
+  }
+
+  // ch9-1의 코드를 클래스로 바꿈
+  class Student { // 클래스를 생성할 때 앞글자를 대문자로 써주자 Number, String 이런것들도 클래스이다
+    // 생성자 → 클래스로 객체를 생성할 때 호출되는 녀석
+    // constructor (이름, 국어, 영어, 수학, 과학) {
+    //   this.이름 = 이름
+    //   this.국어 = 국어
+    //   this.영어 = 영어
+    //   this.수학 = 수학
+    //   this.과학 = 과학
+    // }
+
+    constructor (이름, { 국어, 영어, 수학, 과학 }) {
+      this.이름 = 이름
+      this.국어 = 국어
+      this.영어 = 영어
+      this.수학 = 수학
+      this.과학 = 과학
+    }
+
+    // 메서드를 만드는 부분
+    getSum() {
+      return this.국어 + this.영어 + this.수학 + this.과학
+    }
+
+    getAverage () {
+      return this.getSum() / 4
+    }
+  }
+
+  const students = new StudentList()
+  students.add(new Student('구름', { 국어: 87, 영어: 98, 수학: 88, 과학: 90 })) // 이렇게 사용하려면 위의 constructor 부분을 수정해줘야함
+  students.add(new Student('별이', { 국어: 92, 영어: 98, 수학: 96, 과학: 88 }))
+  students.add(new Student('겨울', { 국어: 76, 영어: 96, 수학: 94, 과학: 86 }))
+  students.add(new Student('바다', { 국어: 98, 영어: 52, 수학: 98, 과학: 92 }))
+  students.printTable()  
+
+  // const students = [
+  //   new Student('구름', 87, 98, 88, 90),
+  //   new Student('별이', 92, 98, 96, 88),
+  //   new Student('겨울', 76, 96, 94, 86),
+  //   new Student('바다', 98, 52, 98, 92)
+  // ]
+
+  // let output = '이름\t총점\t평균\n'
+  // for (const student of students) {
+  //   output += `${student.이름}\t${student.getSum()}점\t${student.getAverage()}점\n`
+  // }
+  // console.log(output)
+
+  // const students = new StudentList()
+  // students.add(new Student('구름', 87, 98, 88, 90))
+  // students.add(new Student('별이', 92, 98, 96, 88))
+  // students.add(new Student('겨울', 76, 96, 94, 86))
+  // students.add(new Student('바다', 98, 52, 98, 92))
+  // students.printTable()
+</script>

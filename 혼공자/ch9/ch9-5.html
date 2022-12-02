@@ -1,0 +1,19 @@
+<script>
+  // 만들어진 Square 객체의 개수를 알고 싶을 때
+  class Square {
+    static count = 0 // 밖에 있는 Square.count = 0와 같은 역할을 함
+    static test () {} // 밖에 있는   Square.test = function () {} 메서드와 같은 역할을 함
+
+    constructor (length) {
+      Square.count += 1
+    }
+  }
+  // Square.count = 0
+  // Square.test = function () {}
+
+  console.log(Square.count)
+  new Square()
+  new Square()
+  new Square()
+  console.log(Square.count)
+</script>

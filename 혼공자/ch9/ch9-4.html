@@ -1,0 +1,15 @@
+<script>
+  // private 메서드
+  class Square {
+    #a
+    #test () {
+      console.log('private test() 메서드입니다.')
+    }
+
+    constructor () {
+      this.#test()
+    }
+  }
+
+  new Square()
+</script>

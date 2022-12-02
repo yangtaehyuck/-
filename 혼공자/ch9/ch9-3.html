@@ -1,0 +1,67 @@
+<script>
+  // 정사각형을 나타내는 객체
+  class Square {
+    // private 속성: 클래스 내부에서만 접근 가능한 속성
+    #length // 이렇게 '#'을 붙여서 선언하게 된다 => 클래스를 더 안전하게 사용하기 위해
+
+    constructor (length) {
+      if (length < 0) { throw '길이는 0 이상이어야 합니다.' }
+      this.#length = length
+    }
+
+    // getter와 setter는 private 속성에 접근하기 위해서 만들어진 것이다
+    // getArea () {
+    //   return this.#length * this.#length
+    // }
+
+    // getPerimeter () {
+    //   return 4 * this.#length
+    // }
+
+    // 위는 옛날 방식 아래는 현대 방식
+    get area () {
+      return this.#length * this.#length
+    }
+
+    get perimeter () {
+      return 4 * this.#length
+    }
+
+    // setLength (length) { // set으로 시작하는 메서드를 셋터(setter)라고함
+    //   if (length < 0) { throw '길이는 0 이상이어야 합니다.' }
+    //   this.#length = length
+    // }
+
+    // getLength () { // get으로 시작하는 메서드를 겟터(getter)라고함
+    //   return this.#length
+    // }
+
+    // 위는 옛날 방식 아래는 현대 방식
+    set length (length) { // set으로 시작하는 메서드를 셋터(setter)라고함
+      if (length < 0) { throw '길이는 0 이상이어야 합니다.' }
+      this.#length = length
+    }
+
+    get length () {       // get으로 시작하는 메서드를 겟터(getter)라고함
+      return this.#length
+    }
+  }
+
+  // const square = new Square(10)
+  // console.log(square.getArea())
+  // console.log(square.getPerimeter())
+
+  // 위는 옛날 방식 아래는 현대 방식
+  const square = new Square(10)
+  console.log(square.area)
+  console.log(square.perimeter)
+
+  // console.log(square.getLength())
+  // square.setLength(20)
+  // console.log(square.getLength())
+
+  // 위는 옛날 방식 아래는 현대 방식
+  console.log(square.length)
+  square.length = 20
+  console.log(square.length)
+</script>
